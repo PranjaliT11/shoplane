@@ -1,7 +1,19 @@
 import "./ShopHeader.css";
 import React from 'react';
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
-function ShopHeader(){
+
+
+    function ShopHeader(props) {
+      
+        const {count}=props
+     
+             const [open, setOpen] = useState(false);
+             const handleOpen = () => {
+                 setOpen(!open);
+       };
+           
 
     return(
         <div className="header">
@@ -17,7 +29,7 @@ function ShopHeader(){
                         </svg><div><p className="login">Login</p><p className="or-signup">or Sign Up</p></div><img className="droparrow" src= "https://img.favpng.com/18/3/13/arrow-computer-icons-drop-down-list-symbol-png-favpng-1gyXNt5eAdQFuYAWNsthDxn5g.jpg"alt="arrow"/>
                         
                         </button>
-                        {open ? (
+                        {(
                         <ul className="menu">
                             <li className="menu-list">
                                 <Link className="link" to="/login" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-left" viewBox="0 0 16 16">
@@ -42,10 +54,10 @@ function ShopHeader(){
 </svg>Cart</Link>
                            </li>
                         </ul>
-                        ) : null}
+                        ) } 
                     </div>
                     <div className="Addtocart">
-                        <Link className="link" to="/cart"><img src="./cart.svg" alt="cart"></img></Link>
+                        <Link className="link" to="/cart"><img src="https://www.pngfind.com/pngs/m/311-3119177_svg-shop-cart-shopping-cart-icon-svg-hd.png" alt="cart"></img></Link>
                         <span>{count}</span></div>
                 </div>
             </div>

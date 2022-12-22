@@ -33,7 +33,7 @@ function Layout(){
        
     let favproduct = Favourite
     if(favproduct.includes(params)){
-      favproduct.splice(favprod.indexOf(params),1)
+      favproduct.splice(favproduct.indexOf(params),1)
     }else{
       favproduct.push(params)
     }
